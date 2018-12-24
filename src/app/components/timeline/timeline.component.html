@@ -1,0 +1,19 @@
+<div class="main-container">
+  <div class="timeline-container">
+    <fa-icon class="timeline-container__logo" [icon]="faTwitter"></fa-icon>
+    <div class="input-container">
+      <div class="input-row">
+        <img class="input-container__avatar" src="https://ui-avatars.com/api/?name={{ user.name.toString().split(' ').join('+') }}&background=CCD6DD&color=657786&rounded=true&size=32&font-size=0.40" />
+        <textarea class="input-container__tweet-input" [(ngModel)]="newTweet.content" (keyup)="enableTweetButton()"
+          maxlength="240" type="text" placeholder="O que Está acontecendo ?" rows="1"></textarea>
+      </div>
+      <div class="tweet-button-wrap">
+        <p class="tweet-length">{{ newTweet.content.length || 0 }} / 240</p>
+        <button class="input-container__tweet-button" (click)="saveTweet()" [disabled]="!tweetButton">Tweetar</button>
+      </div>
+    </div>
+    <div class="tweets-container">
+      <app-tweet *ngFor="let tweet of tweets" [tweet]="tweet"></app-tweet>
+    </div>
+  </div>
+</div>

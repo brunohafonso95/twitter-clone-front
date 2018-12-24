@@ -1,0 +1,10 @@
+<div class="main-container">
+  <div class="input-container">
+    <fa-icon class="input-container__logo" [icon]="faTwitter"></fa-icon>
+    <input class="input-container__input" type="text" maxlength="30" [(ngModel)]="user.name" (keyup)="saveUserSessionWithEnter($event)"
+      placeholder="Nome" />
+      <input class="input-container__input last" type="text" maxlength="30" [(ngModel)]="user.userName" (keyup)="saveUserSessionWithEnter($event)"
+      placeholder="Nome de usuário" />
+    <button class="input-container__button" (click)="saveUserSession()">Entrar</button>
+  </div>
+</div>

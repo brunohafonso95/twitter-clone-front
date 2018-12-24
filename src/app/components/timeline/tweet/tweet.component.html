@@ -1,0 +1,13 @@
+<div class="tweet-container">
+  <img class="tweet-container__avatar" src="https://ui-avatars.com/api/?name={{ tweet.author.toString().split(' ').join('+') }}&background=CCD6DD&color=657786&rounded=true&size=48&font-size=0.40" />
+  <div class="tweet-container__tweet-content">
+    <div class="header-row">
+        <h2 class="tweet-container__tweet-content__author">{{ tweet.author }} <span> @{{ tweet.authorUser }}</span></h2>
+        <h3 class="tweet-container__tweet-content__time">{{ tweet.createdAt | date:'h:mm a - MMM d, yyyy' }}</h3>
+        <p class="tweet-container__tweet-content__text">{{ tweet.content }}</p>
+    </div>
+  </div>
+  <div class="image-like-container">
+    <img src="assets/heart.png" (click)="likeTweet(tweet._id)"/><span>{{ tweet.likes }}</span>
+  </div>
+</div>

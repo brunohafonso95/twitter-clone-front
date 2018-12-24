@@ -1,0 +1,16 @@
+.splash-screen {
+    align-items: center;
+    background: #00aced;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    position: absolute;
+    transition: all 0.5s ease;
+    width: 100%;
+    z-index: 1000;
+}
+
+.splash-screen__icon {
+    color: #fff;
+    font-size: 3.5em;
+}
