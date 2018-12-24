@@ -62,6 +62,7 @@ export class TimelineComponent implements OnInit {
     this.tweetService.insertTweet(this.newTweet)
       .then((tweet: Tweet) => {
         this.tweets.push(tweet);
+        this.getUserData();
         this.enableTweetButton();
       }).catch(error => { if (error) { alert(error); } });
   }
