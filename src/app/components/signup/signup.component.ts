@@ -13,6 +13,7 @@ export class SignupComponent implements OnInit {
   // icons
   faTwitter = faTwitter;
   user = new User();
+  signinButton = false;
 
   constructor(private authService: AuthService, private router: Router) { }
 
@@ -27,8 +28,17 @@ export class SignupComponent implements OnInit {
   }
 
   saveUserSessionWithEnter(e) {
+    this.enableSigninButton();
     if (e.key === 'Enter') {
       this.authService.login(this.user);
+    }
+  }
+
+  enableSigninButton() {
+    if (this.user.name.length < 1 || this.user.userName.length < 1) {
+      this.signinButton = false;
+    } else {
+      this.signinButton = true;
     }
   }
 }

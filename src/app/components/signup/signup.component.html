@@ -5,6 +5,6 @@
       placeholder="Nome" />
       <input class="input-container__input last" type="text" maxlength="30" [(ngModel)]="user.userName" (keyup)="saveUserSessionWithEnter($event)"
       placeholder="Nome de usuário" />
-    <button class="input-container__button" (click)="saveUserSession()">Entrar</button>
+    <button class="input-container__button" (click)="saveUserSession()" [disabled]="!signinButton">Entrar</button>
   </div>
 </div>
