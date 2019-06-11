@@ -29,8 +29,10 @@ export class SignupComponent implements OnInit {
 
   saveUserSessionWithEnter(e) {
     this.enableSigninButton();
-    if (e.key === 'Enter') {
-      this.authService.login(this.user);
+    if (this.user.name.length > 0 && this.user.userName.length > 0) {
+      if (e.key === 'Enter') {
+        this.authService.login(this.user);
+      }
     }
   }
 
